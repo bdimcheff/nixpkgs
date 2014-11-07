@@ -1870,6 +1870,8 @@ let
   nodejs-unstable = callPackage ../development/web/nodejs { libuv = libuvVersions.v1_2_0; unstableVersion = true; };
   nodejs-0_10 = callPackage ../development/web/nodejs/v0_10.nix { };
 
+  nodejs08 = callPackage ../development/web/nodejs08 {};
+
   nodePackages_0_12 = callPackage ./node-packages.nix { self = nodePackages_0_12; };
 
   nodePackages_0_10 = callPackage ./node-packages.nix { self = nodePackages_0_10; nodejs = nodejs-0_10; };
