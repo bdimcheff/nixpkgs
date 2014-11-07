@@ -1564,6 +1564,8 @@ let
 
   nodejs = callPackage ../development/web/nodejs {};
 
+  nodejs08 = callPackage ../development/web/nodejs08 {};
+
   nodePackages = recurseIntoAttrs (import ./node-packages.nix {
     inherit pkgs stdenv nodejs fetchurl fetchgit;
     neededNatives = [python] ++ lib.optional (lib.elem system lib.platforms.linux) utillinux;
@@ -10536,7 +10538,7 @@ let
 
   smartdeblur = callPackage ../applications/graphics/smartdeblur { };
 
-  snapper = callPackage ../tools/misc/snapper { 
+  snapper = callPackage ../tools/misc/snapper {
     btrfsProgs = btrfsProgs-3_16;
   };
 
